@@ -13,6 +13,10 @@ bool isPathToFreedom(MazeCell* start, const std::string& moves)
     
     for(int i = 0; i < moves.size(); i++)
     {
+        if(currentCell == nullptr) {
+            return false;
+        }
+        
         if(moves[i] == 'N') currentCell = currentCell->north;
         else if(moves[i] == 'S') currentCell = currentCell->south;
         else if(moves[i] == 'E') currentCell = currentCell->east;
